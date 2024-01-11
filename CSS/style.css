@@ -1,0 +1,111 @@
+@font-face {
+    font-family: digital;
+    src: url(digital-7.ttf);
+}
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    background-color: #1C2A39;
+    color: #fff;
+}
+
+#clock{
+    width: min(70vh, 300px);
+    aspect-ratio: 1;
+    background-color: #3C4A59;
+    border-radius: 50%;
+    border: 2px solid #6E3C1B;
+    box-shadow: 2px 2px 10px #ffffff7b, inset 2px 2px 10px #ffffff7b, -2px -2px 10px 5px #111,  inset -2px -2px 10px 5px #111;
+    position: relative;
+}
+
+#clock-inner::after{
+    content: "";
+    width: 15px;
+    height: 15px;
+    background-color:#b8bdc2 ;
+    border-radius: 50%;
+    border: 2px solid #e73e2c ;
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.dot{
+    width: 5px;
+    height: 47%;
+    /* background-color: #E74C3C; */
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translateX(-50%) rotate(calc(var(--i)*6deg));
+    transform-origin: bottom;
+}
+
+.dot::after{
+    content: "";
+    width: 2px;
+    height: 5px;
+    background-color: #fff;
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.7;
+}
+
+.dot:nth-child(5n)::after{
+    background-color: #e73e2c;
+    box-shadow: none;
+    width: 3px;
+}
+.needle{
+    position: absolute;
+    width: 5px;
+    height: 40%;
+    background-color: #e73e2c;
+    border-radius: 200% 200% 0px 0px ;
+    left: 50%;
+    bottom: 50%;
+    transform: translateX(-50%);
+    transform-origin: bottom;
+    --rotate: 20;
+}
+.hour{
+    transform: rotate(calc(var(--rotate)*5deg));
+    height: 22%;
+    width: 7px;
+    background-color: #ffffffa2;
+}
+.min{
+    transform: rotate(calc(var(--rotate)*10deg));
+    height: 30%;
+    background-color: #ffffffa2;
+
+}
+
+.sec{
+    --rotate:0;
+    transform: rotate(calc(var(--rotate)*2deg));
+    height: 40%;
+    width: 2px;
+}
+
+.sec::after{
+    content: '';
+    width: 5px;
+    height: 20px;
+    background-color: #e73e2c;
+    position: absolute;
+    bottom: -30px;
+    transform: translateX(-50%);
+}
