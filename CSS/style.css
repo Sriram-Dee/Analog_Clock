@@ -68,6 +68,60 @@ body{
     box-shadow: none;
     width: 3px;
 }
+.dot::before{
+    position: absolute;
+    top: 8px;
+    left: 0;
+    transform: translateX(-50%) rotate(calc(var(--i)*-6deg));
+}
+
+
+.dot:nth-child(3n)::before{
+    font-size: 18px;
+    font-weight: 800;
+    
+}
+.dot:nth-child(5)::before{
+    content: "1";
+}
+.dot:nth-child(10)::before{
+    content: "2";
+}
+.dot:nth-child(20)::before{
+    content: "4";
+}
+.dot:nth-child(25)::before{
+    content: "5";
+}
+.dot:nth-child(5)::before{
+    content: "1";
+}
+.dot:nth-child(35)::before{
+    content: "7";
+}
+.dot:nth-child(40)::before{
+    content: "8";
+}
+.dot:nth-child(50)::before{
+    content: "10";
+}
+.dot:nth-child(55)::before{
+    content: "11";
+}
+.dot:nth-child(60)::before{
+    content: "12";
+}
+.dot:nth-child(15)::before{
+    content: "3";
+}
+.dot:nth-child(30)::before{
+    content: "6";
+}
+
+.dot:nth-child(45)::before{
+    content: "9";
+}
+
 .needle{
     position: absolute;
     width: 5px;
