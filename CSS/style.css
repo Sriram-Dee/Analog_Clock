@@ -132,16 +132,16 @@ body{
     bottom: 50%;
     transform: translateX(-50%);
     transform-origin: bottom;
-    --rotate: 20;
+    --rotate: 00;
 }
 .hour{
-    transform: rotate(calc(var(--rotate)*5deg));
+    transform: rotate(calc(var(--rotate)*1deg)) translateX(-50%);
     height: 22%;
     width: 7px;
     background-color: #ffffffa2;
 }
 .min{
-    transform: rotate(calc(var(--rotate)*10deg));
+    transform: rotate(calc(var(--rotate)*1deg)) translateX(-50%);
     height: 30%;
     background-color: #ffffffa2;
 
@@ -149,7 +149,7 @@ body{
 
 .sec{
     --rotate:0;
-    transform: rotate(calc(var(--rotate)*2deg));
+    transform: rotate(calc(var(--rotate)*1deg));
     height: 40%;
     width: 2px;
 }
